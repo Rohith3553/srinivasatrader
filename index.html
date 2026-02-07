@@ -34,6 +34,7 @@
         .product-card {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             background: white; border-radius: 24px; border: 1px solid #e2e8f0;
+            height: 100%; display: flex; flex-direction: column;
         }
         .product-card:hover {
             transform: translateY(-10px);
@@ -47,7 +48,6 @@
             border: 4px solid white;
             cursor: pointer;
         }
-        /* Click overlay for Map */
         .map-click-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             z-index: 10;
@@ -80,7 +80,7 @@
             <h2 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight uppercase">Strength In <br><span class="text-orange-500">Every Layer</span></h2>
             <p class="text-lg text-slate-200 mb-10 max-w-xl mx-auto">MP Birla Cement, Asian Paints, and Premium Hardware Materials at Wholesale Prices.</p>
             <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="#products" class="bg-orange-600 text-white px-10 py-4 rounded-2xl font-bold shadow-lg shadow-orange-600/30 hover:bg-orange-700 transition">Browse Catalog</a>
+                <a href="#products" class="bg-orange-600 text-white px-10 py-4 rounded-2xl font-bold shadow-lg hover:bg-orange-700 transition">Browse Catalog</a>
                 <a href="#about" class="bg-white/10 backdrop-blur-md text-white border border-white/30 px-10 py-4 rounded-2xl font-bold hover:bg-white/20 transition">Our Story</a>
             </div>
         </div>
@@ -110,49 +110,43 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="product-card p-8 flex flex-col">
+            <div class="product-card p-8">
                 <div class="w-14 h-14 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-hammer"></i></div>
                 <h4 class="text-2xl font-bold mb-3">MP Birla Cement</h4>
                 <p class="text-slate-500 mb-8">Authorized Dealer. Best for foundation, slabs, and heavy construction.</p>
                 <a href="https://wa.me/918897664980?text=I'm interested in MP Birla Cement price" class="mt-auto block text-center bg-green-600 text-white py-4 rounded-xl font-bold hover:bg-green-700 transition shadow-lg">Check Price</a>
             </div>
 
-            <div class="product-card p-8 flex flex-col">
+            <div class="product-card p-8">
                 <div class="w-14 h-14 bg-pink-50 text-pink-600 rounded-2xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-paint-roller"></i></div>
                 <h4 class="text-2xl font-bold mb-3">Asian Paints</h4>
                 <p class="text-slate-500 mb-8">All types of interior, exterior paints and wall putty with 1000+ shades.</p>
                 <a href="https://wa.me/918897664980?text=I'm interested in Asian Paints catalog" class="mt-auto block text-center bg-green-600 text-white py-4 rounded-xl font-bold hover:bg-green-700 transition shadow-lg">Get Palette</a>
             </div>
 
-            <div class="product-card p-8 flex flex-col">
+            <div class="product-card p-8">
                 <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-faucet"></i></div>
                 <h4 class="text-2xl font-bold mb-3">Plumbing & Sanitary</h4>
                 <p class="text-slate-500 mb-8">Premium PVC, CPVC pipes and luxury bathroom fittings for leak-proof solutions.</p>
                 <a href="https://wa.me/918897664980?text=Need Plumbing material quotation" class="mt-auto block text-center bg-green-600 text-white py-4 rounded-xl font-bold hover:bg-green-700 transition shadow-lg">Get Quote</a>
             </div>
 
-            <div class="product-card p-8 flex flex-col">
-                <div class="w-14 h-14 bg-slate-100 text-slate-600 rounded-2xl flex items-center justify-center mb-6 text-2xl">
-                    <i class="fas fa-truck-moving"></i>
-                </div>
+            <div class="product-card p-8">
+                <div class="w-14 h-14 bg-slate-100 text-slate-600 rounded-2xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-truck-moving"></i></div>
                 <h4 class="text-2xl font-bold mb-3">Sand & Aggregates</h4>
                 <p class="text-slate-500 mb-8">Fine quality sand and kankara (stone aggregates) delivered directly to your site.</p>
                 <a href="https://wa.me/918897664980?text=Need Sand/Aggregates delivery" class="mt-auto block text-center bg-green-600 text-white py-4 rounded-xl font-bold hover:bg-green-700 transition shadow-lg">Order Delivery</a>
             </div>
 
-            <div class="product-card p-8 flex flex-col">
-                <div class="w-14 h-14 bg-yellow-100 text-yellow-600 rounded-2xl flex items-center justify-center mb-6 text-2xl">
-                    <i class="fas fa-tools"></i>
-                </div>
+            <div class="product-card p-8">
+                <div class="w-14 h-14 bg-yellow-100 text-yellow-600 rounded-2xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-tools"></i></div>
                 <h4 class="text-2xl font-bold mb-3">General Hardware</h4>
                 <p class="text-slate-500 mb-8">All essential building tools, hardware, and accessories at wholesale prices.</p>
                 <a href="https://wa.me/918897664980?text=Hardware items enquiry" class="mt-auto block text-center bg-green-600 text-white py-4 rounded-xl font-bold hover:bg-green-700 transition shadow-lg">Inquire Now</a>
             </div>
             
-            <div class="product-card p-8 flex flex-col">
-                <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 text-2xl">
-                    <i class="fas fa-screwdriver-wrench"></i>
-                </div>
+            <div class="product-card p-8">
+                <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 text-2xl"><i class="fas fa-bolt"></i></div>
                 <h4 class="text-2xl font-bold mb-3">Electrical & Fittings</h4>
                 <p class="text-slate-500 mb-8">High-quality electrical wires, switches, and fittings for safe installations.</p>
                 <a href="https://wa.me/918897664980?text=Electrical fittings price list" class="mt-auto block text-center bg-green-600 text-white py-4 rounded-xl font-bold hover:bg-green-700 transition shadow-lg">View Products</a>
@@ -161,11 +155,11 @@
 
         <div class="mt-32">
             <h3 class="text-3xl font-black uppercase text-center mb-10">Locate Our Shop</h3>
-            <div class="map-container group" onclick="window.open('https://www.google.com/maps/dir//Sri+Srinivasa+Traders+Pembatla+Konapur+Road', '_blank')">
+            <div class="map-container group" onclick="window.open('https://www.google.com/maps/dir/?api=1&destination=Sri+Srinivasa+Traders+Pembatla', '_blank')">
                 <div class="map-click-overlay"></div>
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.00!2d78.8920!3d18.9100!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcc69a7e1a7650f%3A0x4b46a8e325984637!2sSri%20Srinivasa%20Traders!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
-                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3741.564779673966!2d78.961054!3d18.806655!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcc69a7e1d5650f%3A0x4b46a8e325984637!2sSri%20Srinivasa%20Traders!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
                 </iframe>
             </div>
             <p class="text-center text-slate-500 text-sm mt-4 font-bold">📍 Click the map to get directions to the shop!</p>
@@ -176,7 +170,7 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-16 mb-16">
                 <div class="space-y-6">
-                    <h4 class="text-3xl font-black text-white uppercase tracking-tighter">SRI SRINIVASA <span class="text-orange-500">TRADERS</span></h4>
+                    <h4 class="text-3xl font-black text-white uppercase tracking-tighter">SRI SRINIVASA <span class="text-orange-600">TRADERS</span></h4>
                     <p class="text-slate-400 leading-relaxed italic">"Quality Materials for Strong Homes."</p>
                     <div class="flex gap-4">
                         <a href="https://www.instagram.com/sri.srinivasa_traders22" target="_blank" class="w-12 h-12 bg-slate-900 rounded-xl flex items-center justify-center hover:bg-pink-600 transition border border-slate-800"><i class="fab fa-instagram text-xl"></i></a>
@@ -203,11 +197,11 @@
                     <div class="space-y-3">
                         <div>
                             <p class="font-bold text-white text-xl">Thodeti Srinivas</p>
-                            <p class="text-slate-500 text-sm">Owner</p>
+                            <p class="text-slate-500 text-sm uppercase">Owner</p>
                         </div>
                         <div>
                             <p class="font-bold text-white text-xl">Thodeti Prem Kumar</p>
-                            <p class="text-slate-500 text-sm">Manager</p>
+                            <p class="text-slate-500 text-sm uppercase">Manager</p>
                         </div>
                     </div>
                     <div class="p-4 bg-slate-900 rounded-2xl border border-slate-800 mt-4">
@@ -223,7 +217,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/918897664980" class="fixed bottom-8 right-8 bg-green-500 text-white w-16 h-16 rounded-2xl shadow-2xl z-50 flex items-center justify-center hover:scale-110 transition active:scale-95">
+    <a href="https://wa.me/918897664980" class="fixed bottom-8 right-8 bg-green-500 text-white w-16 h-16 rounded-2xl shadow-2xl z-50 flex items-center justify-center hover:scale-110 transition">
         <i class="fab fa-whatsapp text-3xl"></i>
     </a>
 
