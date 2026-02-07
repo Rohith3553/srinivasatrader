@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Srinivasa Traders | Jagtial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; background-color: #f8f9fa; }
+        
+        /* Video Background Styling */
+        .video-container {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            object-fit: cover;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Video paina black shade kosam */
+            z-index: 0;
+        }
+        .content-up { z-index: 10; }
+        
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="bg-white py-6 text-center shadow-md">
+        <img src="logo.jpg" alt="Logo" class="mx-auto mb-3 h-24 w-auto object-contain">
+        <h1 class="text-3xl font-bold text-orange-700 uppercase tracking-widest">Sri Srinivasa Traders</h1>
+        <p class="text-gray-600 italic mt-1 text-sm">"Om Namo Venkatesaya"</p>
+    </header>
+
+    <section class="video-container text-white px-4">
+        <video autoplay muted loop id="bg-video">
+            <source src="background.mp4" type="video/mp4"> Your browser does not support HTML5 video.
+        </video>
+        <div class="overlay"></div>
+        <div class="content-up text-center">
+            <h2 class="text-4xl md:text-6xl font-bold mb-4">Quality Construction Starts Here</h2>
+            <p class="text-xl mb-8">Authorized Dealer: MP Birla Cement | Asian Paints</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://wa.me/918890664980" class="bg-green-600 hover:bg-green-700 px-8 py-3 rounded-full font-bold transition flex items-center">
+                    <i class="fab fa-whatsapp mr-2"></i> WhatsApp Enquiry
+                </a>
+                <a href="#products" class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full font-bold transition">View Materials</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-6 max-w-6xl mx-auto text-center">
+        <h3 class="text-3xl font-bold mb-8 text-blue-900 border-b-4 border-yellow-500 inline-block">Our Legacy of Trust</h3>
+        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Managed by <b>Thodeti Srinivas</b> & <b>Thodeti Prem Kumar</b>, we are Jagtial's most trusted partner for construction needs. 
+            From foundation to finishing, we provide top-tier materials.
+        </p>
+    </section>
+
+    <section id="products" class="py-16 bg-gray-200 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold mb-12 text-center text-blue-900">Our Premium Products</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg product-card overflow-hidden hover:scale-105 transition">
+                    <img src="cement.jpg" alt="MP Birla Cement">
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2 text-blue-900">MP Birla Cement</h4>
+                        <p class="text-gray-600 text-sm">Ultimate strength and durability for your dream home.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg product-card overflow-hidden hover:scale-105 transition">
+                    <img src="paints.jpg" alt="Asian Paints">
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2 text-blue-900">Asian Paints</h4>
+                        <p class="text-gray-600 text-sm">Complete range of vibrant colors for your walls.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg product-card overflow-hidden hover:scale-105 transition">
+                    <img src="plumbing.jpg" alt="Plumbing">
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2 text-blue-900">Plumbing & Sanitary</h4>
+                        <p class="text-gray-600 text-sm">High-quality PVC pipes and bathroom fittings.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-blue-900 text-white py-12 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <h4 class="text-3xl font-bold mb-6 text-yellow-500 underline decoration-white">Get In Touch</h4>
+                <div class="space-y-4 text-xl">
+                    <p class="flex items-start">
+                        <i class="fas fa-map-marker-alt mt-1 mr-4 text-yellow-500"></i> 
+                        <span>Main Road Konapur, Pembatla, Jagtial, 505529</span>
+                    </p>
+                    <p class="flex items-center">
+                        <i class="fas fa-phone-alt mr-4 text-yellow-500"></i> 
+                        <span class="font-bold">8890664980, 9912388741</span>
+                    </p>
+                    <p class="flex items-center">
+                        <i class="fas fa-envelope mr-4 text-yellow-500"></i> 
+                        <span>srinivasatraders@gmail.com</span>
+                    </p>
+                </div>
+                <div class="mt-8 flex gap-6">
+                    <a href="https://www.instagram.com/sri.srinivasa_traders22" class="text-3xl hover:text-pink-400"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-3xl hover:text-green-400"><i class="fas fa-map-marked-alt"></i></a>
+                </div>
+            </div>
+            <div class="md:text-right flex flex-col justify-center">
+                <h4 class="text-2xl font-bold mb-4 text-yellow-500">Business Hours</h4>
+                <p class="text-xl">Mon - Sat: 9:00 AM - 8:00 PM</p>
+                <p class="text-xl text-yellow-200">Sunday: On Call Service</p>
+            </div>
+        </div>
+        <div class="text-center mt-10 border-t border-blue-800 pt-6 text-gray-400 text-sm">
+            © 2026 Sri Srinivasa Traders. Quality Materials at Wholesale Prices.
+        </div>
+    </footer>
+
+    <a href="https://wa.me/918890664980" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition z-50">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+</body>
+</html>
