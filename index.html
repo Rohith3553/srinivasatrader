@@ -10,16 +10,36 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
         body { font-family: 'Poppins', sans-serif; background-color: #f4f4f4; }
         
-        /* Ensures the video covers the entire background area */
-        .video-docker video {
+        /* Ensures the video covers the entire hero area */
+        .video-container {
+            position: relative;
+            height: 600px;
+            overflow: hidden;
+        }
+        .video-container video {
+            position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
             min-width: 100%;
             min-height: 100%;
             width: auto;
             height: auto;
+            transform: translate(-50%, -50%);
             object-fit: cover;
+            z-index: 0;
+        }
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Darkens video so text is readable */
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
     </style>
 </head>
@@ -35,22 +55,22 @@
         </p>
     </header>
 
-    <section class="relative h-[600px] flex items-center justify-center text-center text-white overflow-hidden video-docker">
-        <video autoplay loop muted playsinline class="absolute z-10">
-            <source src="your-video.mp4" type="video/mp4">
+    <section class="video-container flex items-center justify-center text-center text-white px-4">
+        <video autoplay loop muted playsinline>
+            <source src="background.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
+        
+        <div class="video-overlay"></div>
 
-        <div class="absolute z-20 w-full h-full bg-black opacity-50"></div>
-
-        <div class="relative z-30 px-4">
+        <div class="hero-content">
             <h2 class="text-4xl md:text-6xl font-bold mb-4">Quality Construction Starts Here</h2>
             <p class="text-xl mb-8">Authorized Dealer: MP Birla Cement | Asian Paints</p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="https://wa.me/918890664980" class="bg-green-600 hover:bg-green-700 px-8 py-3 rounded-full font-bold transition flex items-center shadow-lg">
+                <a href="https://wa.me/918890664980" class="bg-green-600 hover:bg-green-700 px-8 py-3 rounded-full font-bold transition flex items-center shadow-xl">
                     <i class="fab fa-whatsapp mr-2"></i> WhatsApp Enquiry
                 </a>
-                <a href="#products" class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full font-bold transition shadow-lg">
+                <a href="#products" class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full font-bold transition shadow-xl">
                     View Materials
                 </a>
             </div>
@@ -60,4 +80,70 @@
     <section class="py-16 px-6 max-w-6xl mx-auto text-center">
         <h3 class="text-3xl font-bold mb-8 text-blue-900 border-b-4 border-yellow-500 inline-block">About Our Legacy</h3>
         <p class="text-lg text-gray-700 leading-relaxed mb-6">
-            Managed by <b>Thodeti Srinivas</b> &
+            Managed by <b>Thodeti Srinivas</b> & <b>Thodeti Prem Kumar</b>, Sri Srinivasa Traders has been a pillar of trust in Jagtial. We provide everything needed to build your dream home, from high-grade cement to premium paints.
+        </p>
+    </section>
+
+    <section id="products" class="py-16 bg-gray-100 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:transform hover:scale-105 transition">
+                <i class="fas fa-hard-hat text-4xl text-yellow-600 mb-4"></i>
+                <h4 class="text-xl font-bold mb-2 text-blue-900">MP Birla Cement</h4>
+                <p class="text-gray-600">Ultimate strength and durability for foundations and slabs.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:transform hover:scale-105 transition">
+                <i class="fas fa-paint-roller text-4xl text-pink-600 mb-4"></i>
+                <h4 class="text-xl font-bold mb-2 text-blue-900">Asian Paints</h4>
+                <p class="text-gray-600">Complete range of interior and exterior colors.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:transform hover:scale-105 transition">
+                <i class="fas fa-faucet text-4xl text-blue-600 mb-4"></i>
+                <h4 class="text-xl font-bold mb-2 text-blue-900">Plumbing & Sanitary</h4>
+                <p class="text-gray-600">High-quality PVC pipes, fittings, and bathroom essentials.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:transform hover:scale-105 transition">
+                <i class="fas fa-truck-monster text-4xl text-gray-700 mb-4"></i>
+                <h4 class="text-xl font-bold mb-2 text-blue-900">Aggregates (Kankara/Sand)</h4>
+                <p class="text-gray-600">Pure sand and all sizes of stone aggregates (kankara).</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:transform hover:scale-105 transition">
+                <i class="fas fa-circle-notch text-4xl text-gray-500 mb-4"></i>
+                <h4 class="text-xl font-bold mb-2 text-blue-900">Cement Pipes</h4>
+                <p class="text-gray-600">Durable cement pipes for drainage and irrigation.</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:transform hover:scale-105 transition">
+                <i class="fas fa-tools text-4xl text-orange-600 mb-4"></i>
+                <h4 class="text-xl font-bold mb-2 text-blue-900">General Materials</h4>
+                <p class="text-gray-600">All building work materials available at wholesale prices.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-blue-900 text-white py-12 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div>
+                <h4 class="text-2xl font-bold mb-4">Contact Details</h4>
+                <p class="mb-2"><i class="fas fa-map-marker-alt text-yellow-500 mr-2"></i> Main Road Konapur, Pembatla, Jagtial, 505529</p>
+                <p class="mb-2"><i class="fas fa-phone text-yellow-500 mr-2"></i> 8890664980, 9912388741</p>
+                <div class="mt-4 flex gap-4">
+                    <a href="https://www.instagram.com/sri.srinivasa_traders22?igsh=NWlneWZwYzF2MnR0" class="text-2xl hover:text-pink-400"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-2xl hover:text-green-400"><i class="fas fa-map-marked-alt"></i></a>
+                </div>
+            </div>
+            <div class="text-center md:text-right">
+                <h4 class="text-2xl font-bold mb-4">Business Hours</h4>
+                <p>Monday - Saturday: 9:00 AM - 8:00 PM</p>
+                <p>Sunday: Half Day / On Call</p>
+            </div>
+        </div>
+        <div class="text-center mt-10 border-t border-blue-800 pt-6">
+            <p>© 2026 Sri Srinivasa Traders. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/918890664980" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition z-50">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+</body>
+</html>
