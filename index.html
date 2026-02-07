@@ -8,15 +8,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        body { font-family: 'Poppins', sans-serif; background-color: #f4f4f4; }
+        body { font-family: 'Poppins', sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; }
         
-        /* Ensures the video covers the entire hero area */
-        .video-container {
+        /* The Hero Wrapper */
+        .hero-wrapper {
             position: relative;
+            width: 100%;
             height: 600px;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #000; /* Fallback if video fails */
         }
-        .video-container video {
+
+        /* The Video Styling */
+        #bg-video {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -24,22 +31,29 @@
             min-height: 100%;
             width: auto;
             height: auto;
+            z-index: 1;
             transform: translate(-50%, -50%);
-            object-fit: cover;
-            z-index: 0;
+            object-fit: cover; /* Ensures video fills area without stretching */
         }
+
+        /* Dark Overlay for Text Visibility */
         .video-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Darkens video so text is readable */
-            z-index: 1;
+            background: rgba(0, 0, 0, 0.45); /* Adjust 0.45 for darkness */
+            z-index: 2;
         }
+
+        /* Content on top of everything */
         .hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
         }
     </style>
 </head>
@@ -55,8 +69,8 @@
         </p>
     </header>
 
-    <section class="video-container flex items-center justify-center text-center text-white px-4">
-        <video autoplay loop muted playsinline>
+    <section class="hero-wrapper">
+        <video autoplay loop muted playsinline preload="auto" poster="logo.jpg" id="bg-video">
             <source src="background.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -64,13 +78,13 @@
         <div class="video-overlay"></div>
 
         <div class="hero-content">
-            <h2 class="text-4xl md:text-6xl font-bold mb-4">Quality Construction Starts Here</h2>
-            <p class="text-xl mb-8">Authorized Dealer: MP Birla Cement | Asian Paints</p>
+            <h2 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Quality Construction Starts Here</h2>
+            <p class="text-xl mb-8 drop-shadow-md">Authorized Dealer: MP Birla Cement | Asian Paints</p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="https://wa.me/918890664980" class="bg-green-600 hover:bg-green-700 px-8 py-3 rounded-full font-bold transition flex items-center shadow-xl">
+                <a href="https://wa.me/918890664980" class="bg-green-600 hover:bg-green-700 px-8 py-3 rounded-full font-bold transition flex items-center shadow-2xl">
                     <i class="fab fa-whatsapp mr-2"></i> WhatsApp Enquiry
                 </a>
-                <a href="#products" class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full font-bold transition shadow-xl">
+                <a href="#products" class="bg-blue-600 hover:bg-blue-700 px-8 py-3 rounded-full font-bold transition shadow-2xl border border-blue-400">
                     View Materials
                 </a>
             </div>
@@ -86,17 +100,17 @@
 
     <section id="products" class="py-16 bg-gray-100 px-6">
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:transform hover:scale-105 transition">
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:transform hover:scale-105 transition border-t-4 border-yellow-600">
                 <i class="fas fa-hard-hat text-4xl text-yellow-600 mb-4"></i>
                 <h4 class="text-xl font-bold mb-2 text-blue-900">MP Birla Cement</h4>
                 <p class="text-gray-600">Ultimate strength and durability for foundations and slabs.</p>
             </div>
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:transform hover:scale-105 transition">
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:transform hover:scale-105 transition border-t-4 border-pink-600">
                 <i class="fas fa-paint-roller text-4xl text-pink-600 mb-4"></i>
                 <h4 class="text-xl font-bold mb-2 text-blue-900">Asian Paints</h4>
                 <p class="text-gray-600">Complete range of interior and exterior colors.</p>
             </div>
-            <div class="bg-white p-6 rounded-xl shadow-lg hover:transform hover:scale-105 transition">
+            <div class="bg-white p-6 rounded-xl shadow-lg hover:transform hover:scale-105 transition border-t-4 border-blue-600">
                 <i class="fas fa-faucet text-4xl text-blue-600 mb-4"></i>
                 <h4 class="text-xl font-bold mb-2 text-blue-900">Plumbing & Sanitary</h4>
                 <p class="text-gray-600">High-quality PVC pipes, fittings, and bathroom essentials.</p>
@@ -126,7 +140,7 @@
                 <p class="mb-2"><i class="fas fa-map-marker-alt text-yellow-500 mr-2"></i> Main Road Konapur, Pembatla, Jagtial, 505529</p>
                 <p class="mb-2"><i class="fas fa-phone text-yellow-500 mr-2"></i> 8890664980, 9912388741</p>
                 <div class="mt-4 flex gap-4">
-                    <a href="https://www.instagram.com/sri.srinivasa_traders22?igsh=NWlneWZwYzF2MnR0" class="text-2xl hover:text-pink-400"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/sri.srinivasa_traders22" class="text-2xl hover:text-pink-400"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="text-2xl hover:text-green-400"><i class="fas fa-map-marked-alt"></i></a>
                 </div>
             </div>
